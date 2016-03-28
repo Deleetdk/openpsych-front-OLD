@@ -12,7 +12,7 @@ body {
   color: #555;
   padding-top: 70px;
   min-height: 100%;
-  margin-bottom: 80px; /* this should match the height of the footer */
+  margin-bottom: 65px; /* this should match the height of the footer */
 }
 
 h1, .h1,
@@ -30,19 +30,12 @@ h6, .h6 {
 
 a:hover{
   text-decoration: none;
+  color: #84b6d5;
 }
 
-
-/*
- * Override Bootstrap's default container.
- */
-
-@media (min-width: 1200px) {
-  .container {
-    width: 970px;
-  }
+a {
+  color: #4b94c2;
 }
-
 
 /*
  * Masthead for nav
@@ -60,35 +53,9 @@ a:hover{
 }
 
 /* Nav links */
-.blog-nav-item {
-  position: relative;
-  display: inline-block;
-  padding: 10px;
-  font-weight: 500;
-  color: #cdddeb;
-}
-.blog-nav-item:hover,
-.blog-nav-item:focus {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* Active state gets a caret at the bottom */
-.blog-nav .active {
-  color: #fff;
-}
-.blog-nav .active:after {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 0;
-  margin-left: -5px;
-  vertical-align: middle;
-  content: " ";
-  border-right: 5px solid transparent;
-  border-bottom: 5px solid;
-  border-left: 5px solid transparent;
+.navbar-default .navbar-nav > li > a {
+	color: #eee;
+	text-shadow: 0 0 1px #000;
 }
 
 #navbar-brand {
@@ -105,6 +72,15 @@ a:hover{
 .nav-logo:hover {
   opacity: 1;
 }
+
+.navbar-default .navbar-toggle {
+	border-color: #eee;
+}
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #eee;
+  box-shadow: 0 0 1px #000;
+}
+
 
 /*
  * Blog name and description
@@ -138,12 +114,14 @@ a:hover{
 /* Sidebar modules for boxing content */
 .sidebar-module {
   padding: 15px;
-  margin: 0 10px 20px;
+  margin: 0 0 20px;
 }
 .sidebar-module-inset {
   padding: 15px;
   background-color: #fff;
   border-radius: 0px;
+  box-shadow: 0 0 3px #ccc;
+  border-radius: 2px;
 }
 .sidebar-module-inset p:last-child,
 .sidebar-module-inset ul:last-child,
@@ -154,10 +132,12 @@ a:hover{
 .side-bar-twitter {
   text-align: center;
   padding: 0px;
-  margin: 0 10px 20px;
+  margin: 0 0 20px;
   height: 400px;
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 2px;
+  box-shadow: 0 0 3px #ccc;
+
 }
 
 /*
@@ -167,6 +147,7 @@ a:hover{
 #feed-title{
   font-size: 20px;
   text-align: center;
+  min-height: 44px;
 }
 
 .feed-column {
@@ -176,17 +157,13 @@ a:hover{
 
 /* Feed items */
 .feeditem{
-  padding: 8px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-bottom: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+  padding-top: 1px;
   background-color: #fff;
-  border-radius: 0px;
-}
-
-.jsWarning{
-  color: #990000;
-  text-align: center;
+  border-radius: 2px;
+  box-shadow: 0 0 3px #ccc;
 }
 
 .feed-loader {
@@ -264,25 +241,27 @@ a:hover{
  */
 
 .nav-tabs {
-/*  border-bottom: 1px solid #7a7a7a;*/
+  border-bottom: 1px solid #bbb;
   margin-bottom: 18px;
 }
 
-
-/* CITATION BOX */
-.ui-dialog {
-    box-shadow: 0px 0px 5px #333;
-}
-.ui-widget-header {
-    /*font-family: 'Droid Serif', serif;*/
-    background: none;
-    background-color: #a00;
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  border: 1px solid #bbb;
+	border-bottom-color: transparent;
 }
 
-#dialog {
-    font-size: 12px !important;
+.nav-tabs > li > a {
+	color: #555;
 }
 
+.nav-tabs > li > a:hover {
+	color: #4b94c2;
+}
+
+.nav-tabs > li > a:hover {
+  border-bottom: 1px solid #bbb;
+}
 
 /*
  * Footer
@@ -292,12 +271,15 @@ a:hover{
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 80px;
-  padding: 20px 0;
-  color: #999;
+  height: 65px;
+  padding: 10px 0;
+  color: #eee;
   text-align: center;
-  background-color: #f9f9f9;
-  border-top: 1px solid #e5e5e5;
+  background-color: #30424d;
+  text-shadow: 0 0 1px #000;
+}
+.blog-footer p:first-child{
+  margin-bottom: 5px;
 }
 .blog-footer p:last-child {
   margin-bottom: 0;

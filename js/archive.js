@@ -1,23 +1,29 @@
 // Total number of items in the feeds
 var totalODP = 0;
 var totalOBG = 0;
+var totalOQSPS = 0;
 
 // Function to fetch RSS feed from journals and post to archive
 function Archive(journal) {
     // Hide feed until it is populated
     $(id).hide();
-    
+
     if (journal == 'ODP') {
-        var path = '../ODP/feed';
+        var path = '/ODP/feed';
         var id = '#ODP';
         var nid = '#nODP';
     }
     if (journal == 'OBG') {
-        var path = '../OBG/feed';
+        var path = '/OBG/feed';
         var id = '#OBG';
         var nid = '#nOBG';
     }
-    
+    if (journal == 'OQSPS') {
+        var path = '/OQSPS/feed';
+        var id = '#OQSPS';
+        var nid = '#nOQSPS';
+    }
+
     $.get(path, function (data) {
         var n = 0;
         $(data).find("item").each(function () {
@@ -44,7 +50,11 @@ function Archive(journal) {
             totalOBG = n;
             $(nid).html("("+totalOBG+")")
         };
-        
+        if (journal == 'OQSPS') {
+            totalOQSPS = n;
+            $(nid).html("("+totalOQSPS+")")
+        };
+
         // Hide the last seperator line
         $(id).children().eq(-2).hide();
     });
@@ -53,3 +63,4 @@ function Archive(journal) {
 // Build archive
 Archive('ODP')
 Archive('OBG')
+Archive('OQSPS')
