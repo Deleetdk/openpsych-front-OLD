@@ -243,6 +243,11 @@ a {
 .nav-tabs {
   border-bottom: 1px solid #bbb;
   margin-bottom: 18px;
+  font-size: 14px;
+}
+
+.nav-tabs > li > a {
+	margin-right: 0;
 }
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover,
